@@ -22,3 +22,10 @@
 @media (prefers-reduced-motion:reduce){
   .hero-image-wrap{animation:none!important;transform:none!important}
 }
+
+@media(max-width:760px){
+  .hero h1.hero-poem{font-size:50px;line-height:1.35;letter-spacing:2px;white-space:nowrap}
+}
+@media(max-width:390px){
+  .hero h1.hero-poem{font-size:47px;letter-spacing:1px}
+}
