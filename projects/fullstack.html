@@ -1,0 +1,7 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>借书接口 · 全栈入门练习 · 个人记录</title><link rel="stylesheet" href="detail.css"></head><body><header><a href="/wenjianbaiyujing/#projects">← 返回我的作品</a><span>学习与作品</span></header><main><div class="eyebrow">学习项目 / 持续进行</div><h1>借书接口 · 全栈入门练习</h1><p>从一个借书表单开始，练习前端、接口和数据库如何连成一条完整的数据流。</p><div class="tags"><span>HTML / CSS</span><span>JavaScript fetch</span><span>FastAPI</span><span>SQLite</span></div><div class="flow"><span>填写书号</span><b>→</b><span>fetch 请求</span><b>→</b><span>FastAPI</span><b>→</b><span>SQLite 库存</span><b>→</b><span>页面结果</span></div><h2>已经做过</h2><p>已有本地代码提供图书列表、按书号查询，以及 POST /borrow/{isbn} 借书接口。页面提交书号后，数据库库存减少，返回的信息显示在页面上。此前还练习了 Python 类与对象、异常处理、模块与装饰器和 JavaScript 基础。</p><h2>代码里的一个关键动作</h2><pre><code>POST /borrow/{isbn}
+
+SELECT stock FROM books WHERE isbn = ?
+检查图书存在，并且库存大于 0
+
+UPDATE books SET stock = stock - 1 WHERE isbn = ?
+提交修改 → 返回借阅结果 → 显示在页面</code></pre><h2>正在做与接下来</h2><ul><li>继续理解页面、接口和数据库之间的数据怎么走。</li><li>下一个练习：还书功能，再整理代码并推到 Gitee。</li><li>后续学习地图里有 MySQL、Java / Spring Boot 和 Linux / Docker，尚未当作已完成内容。</li></ul><div class="note">当前本站展示学习过程。原练习服务运行在本机，尚未接入此网站；现有代码主要按书号扣减库存，还没有完整借阅记录和还书规则。</div><a href="https://github.com/piggod68/my-notes" target="_blank" rel="noopener noreferrer">查看学习笔记仓库 ↗</a></main><footer>根据已有项目文件与学习记录整理 · 2026.10.25</footer></body></html>
