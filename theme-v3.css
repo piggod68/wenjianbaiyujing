@@ -7,3 +7,18 @@
 @media(prefers-reduced-motion:reduce){.hero-char{animation:none!important}.mist{animation:none!important;will-change:auto}.hero-image,.image-interlude>img{will-change:auto}.motion-ready .reveal{filter:none!important;opacity:1;transform:none!important}.sword-flash,#wind-canvas{display:none!important}.learn-card:hover,.motion-ready .learn-card.visible:hover{transform:none!important}}
 @media(max-width:760px){.hero-image{object-position:80% center}}
 .nav-action{padding:8px 11px 8px 15px;background:#0b160eb3;border:1px solid #c5aa6d30;border-radius:3px}.hero-image{transition:transform .35s linear}.image-interlude>img{transition:transform .2s linear}
+
+/* DSH: subtle continuous atmosphere, not a flashy effect */
+.hero-image-wrap{
+  transform-origin:62% 50%;
+  animation:hero-breathe 18s ease-in-out infinite alternate;
+}
+@keyframes hero-breathe{
+  from{transform:scale(1.005) translate3d(-.35%,0,0)}
+  to{transform:scale(1.06) translate3d(.45%,-.65%,0)}
+}
+.mist{opacity:.31;animation-duration:20s}
+.mist-near{opacity:.4;animation-duration:13s}
+@media (prefers-reduced-motion:reduce){
+  .hero-image-wrap{animation:none!important;transform:none!important}
+}
